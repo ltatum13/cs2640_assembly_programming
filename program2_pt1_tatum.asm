@@ -33,7 +33,7 @@ letterD: .asciiz "D"
 letterF: .asciiz "F"
 
 #exit prompt
-exitPrompt: .asciiz "\nThe program will now exit . . ."
+exitPrompt: .asciiz "\nThe program will now exit."
 
 .text
 main:
