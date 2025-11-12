@@ -50,11 +50,11 @@ main:
 	move $t1, $v0	#save the given integer to $t1
 	
 	li $t2, 1		#loop counter
-	j looping		#jump to the looping label
+	j exponentLoop		#jump to the exponentLoop label
 	
-looping:
-	#check that the loop counter is less than y
-	#  jump to exit label when loop counter meets y
+exponentLoop:
+	#check that the loop counter equals y and jump
+	#  to exit label when loop counter meets y
 	beq $t1, $t2, exit
 	
 	#multiply x to itself and save the product to $t0
@@ -63,8 +63,8 @@ looping:
 	#increment the loop counter by 1
 	addi $t2, $t2, 1
 	
-	#go through the looping label again
-	j looping
+	#go through the exponentLoop label again
+	j exponentLoop
 	
 exit:
 	#print the result to the user
