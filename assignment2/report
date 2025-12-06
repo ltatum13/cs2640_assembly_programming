@@ -1,0 +1,29 @@
+Name: Laila Tatum
+BID: 017805099
+
+1.) How did you implement DetermineNetwork()?
+    For DetermineNetwork(), I created two variables, best_signal and
+    best_network, to compare the signal strengths of each cached
+    network and save the name of the network with the strongest signal.
+    I wrote three conditional statements to compare the medium to the 
+    criteria, and each iterates through the cached networks matches the
+    criteria of the medium. 
+    
+    If I'm looking at wifi connection, it confirms the network is
+    actually a wifi connection and if there's a password saved, then
+    the signal strengths are compared to each other until the 
+    strongest network's name is saved and returned to the
+    ChooseNetwork() function.
+
+2.) How did you implement ScanNetworksV3()?
+    For ScanNetworksV3(), I have a variable to temporarily hold the
+    password_saved boolean, the number indicating the medium, and an
+    iterator variable for the while loop. I also declared a file pointer
+    and opened the experiment_data file in reading mode, and did
+    some file error handling.
+
+    The while loop iterates through the experiment_data file, scanning
+    network name, connection medium, signal strength, and if there's a
+    password saved in one line. If there's a password saved, the scanned
+    values are saved as a cached network struct. After the function is
+    done iterating, the experiment_data file is closed.

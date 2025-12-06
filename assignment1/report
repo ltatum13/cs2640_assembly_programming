@@ -1,0 +1,12 @@
+Name: Laila Tatum
+
+1.) I was able to filter out all the bluetooth related logs using the following command:
+	grep -e "Bluetooth" sys_logs > bt_logs
+
+2.) I was able to filter out all the bluetooth logs with errors by using the following command:
+	grep -e "ERROR" bt_logs > bt_error_logs
+
+3.) I created power_logs by doing the following:
+	egrep -A 10 "power level: [0-4]\." sys_logs > power_logs
+
+4.) Based on the information provided, there seems to be an issue with the device’s bluetooth controller since the device is struggling to scan. To fix the issue, maybe restarting the bluetooth device or checking the hardware related to bluetooth controller.

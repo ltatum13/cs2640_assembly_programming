@@ -1,0 +1,46 @@
+Name: Laila Tatum
+BID: 017805099
+
+I started this project by creating the StudentGrade struct to hold the students'
+information, such as their name, the score they received after comparison, the letter
+grade based on the score, and a boolean value indicating whether or not the student's
+code could be compiled. After creating the struct, I wrote out the names and parameters
+for the methods I would use: submissionProcessor(), getLetterGrade(), getScore(), and
+printGrades(). Since we are only looking at 4 student submissions and the scores are out of
+100, I created two constant variables, OUT_OF and NUM_STUDENTS, to hold those values.
+
+submissionProcessor() takes in the struct array and set number of students we are grading as
+parameters. I used a for loop to create the student struct array that saved the student name,
+used the student name to build the filename to use for the getScore() function, called the
+getScore() function to get the student's final score, check if the source code if compilable, and
+called getLetterGrade to get the student's letter grade. While I mostly used the lecture slides
+and looked at my previous assignments for guidance regarding the structs, I looked to the internet
+for ways to build the filename and student name, and how to actually check if a C file can compile
+using system(). After checking if the file is compilable, I set the compiled variable to true or
+false. If the source code does not compile, I automatically give the student a 0.
+
+getLetterGrade() was the second function I made where I took in the student array. First, I checked
+the compiled variable, and, if it was false, I automatically set the student's grade to an F. If
+the student's code could compile, I continued to the next if and else-if statements to set the
+student's letter grade to a specific letter based on the given score.
+
+getScore() was the first function I created, and it takes the filename of the current student struct
+to begin comapring the student's source code to the answer.c file. I opened the answer code and
+student's file, then used a while loop to compare each line. If a line from the student's submission
+was different from the answer code, I deducted a point from the score variable. After iterating
+through the files, I returned the final score to submissionProcessor() to save to the student's
+score and closed both files.
+
+printGrades() was a bit more difficult, but I ultimately used a for loop to sort the student array
+and print the sorted grades. For this one, I looked up different sorting algorithms and found used
+something to selection sort to arrange the array to where the student with the highest score was
+put moved to the front of the array until the array was sorted bt highest to lowest. After sorting,
+I used another for loop to iterate through the sorted student array and print each grade.
+
+In the main method, I created the student struct array, and called submissionProcessor() and
+printGrades() with the student array and NUM_STUDENTS as their arguments.
+
+For the Makefile, I basically looked to the makefile I made for Assignment 2 and created one in my
+Project 1 folder. The makefile compiles the main.c code and cleans the source code and temporary
+executable file from the system() I used in submissionProcessor().
+
